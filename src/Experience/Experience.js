@@ -1,4 +1,6 @@
 import * as THREE from 'three'
+import { Pane } from 'tweakpane'
+
 import Time from './Utils/Time.js'
 import Sizes from './Utils/Sizes.js'
 import Stats from './Utils/Stats.js'
@@ -32,6 +34,7 @@ export default class Experience
         this.time = new Time()
         this.sizes = new Sizes()
         this.setConfig()
+        this.setDebug()
         this.setStats()
         this.setScene()
         this.setCamera()
@@ -68,6 +71,13 @@ export default class Experience
         if(this.config.debug)
         {
             this.stats = new Stats(true)
+        }
+    }
+
+    setDebug() {
+        if(this.config.debug) {
+            this.debug = new Pane()
+            this.debug.containerElem_.style.width = '320px'
         }
     }
     

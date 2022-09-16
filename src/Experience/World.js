@@ -1,7 +1,7 @@
 import * as THREE from 'three'
 
 import Experience from './Experience'
-import Canvas from './Canvas'
+import Particles from './Particles'
 
 export default class World
 {
@@ -16,13 +16,13 @@ export default class World
         {
             if(_group.name === 'base')
             {
-                this.setCanvas()
+                this.setParticles()
             }
         })
     }
 
-    setCanvas() {
-        this.canvas = new Canvas()
+    setParticles() {
+        this.particles = new Particles()
     }
 
     resize()
@@ -31,8 +31,8 @@ export default class World
 
     update()
     {
-        if(this.canvas)
-            this.canvas.update()
+        if(this.particles)
+            this.particles.update()
     }
 
     destroy()
